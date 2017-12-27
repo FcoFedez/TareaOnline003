@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:background="@android:color/black"
     tools:context="com.example.asus410.tareaonline003.MainActivity">
 
 
@@ -22,17 +21,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Nombre del fichero:"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="12sp" />
 
         <EditText
-            android:id="@+id/nombreFichero"
+            android:id="@+id/Enombre"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@android:color/background_light"
+            android:background="@android:color/white"
             android:ems="10"
             android:hint="Nombre del fichero"
             android:inputType="textPersonName"
-            android:textColor="@android:color/background_dark" />
+            android:textColorHint="@android:color/darker_gray" />
 
     </LinearLayout>
 
@@ -46,13 +46,23 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginRight="20dp"
+            android:onClick="onClickGuardar"
             android:text="Salvar" />
 
         <Button
             android:id="@+id/Bcargar"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:onClick="onClickCargar"
             android:text="Cargar" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PREFERENCIAS"
+            android:onClick="clickPreferencias"/>
 
     </LinearLayout>
 
@@ -60,19 +70,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@android:color/background_light">
+        android:background="@android:color/white">
 
         <EditText
             android:id="@+id/Etextos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
             android:ems="10"
             android:hint="Escribe notas"
             android:inputType="textMultiLine"
             android:paddingTop="10dp"
             android:selectAllOnFocus="false"
-            android:singleLine="false" />
+            android:singleLine="false"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray" />
 
     </ScrollView>
 

@@ -1,5 +1,6 @@
 package com.example.asus410.tareaonline003;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -63,10 +64,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickCargar(View view) {
+
+        String name = Efichero.getText().toString();
         try {
 
             //Objeto para leer el fichero
-            FileInputStream fIn = openFileInput("textfile.txt");
+            FileInputStream fIn = openFileInput(name);
             //asociamos un bufferReader al fichero
             BufferedReader br = new BufferedReader(new InputStreamReader(fIn));
             //cadena para almacenar cada línea leída
@@ -94,4 +97,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void clickPreferencias(View v) {
+
+        Intent intentAbrir = new Intent(this, setPrefer.class);
+        startActivity(intentAbrir);
+    }
 }
