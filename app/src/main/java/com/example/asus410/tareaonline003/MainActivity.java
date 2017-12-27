@@ -1,6 +1,8 @@
 package com.example.asus410.tareaonline003;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Efichero = (EditText)findViewById(R.id.Enombre);
         Etexto = (EditText)findViewById(R.id.Etextos);
+        loadPref();
     }
 
     public void onClickGuardar(View view) {
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClickCargar(View view) {
+    private void cargar(){
 
         String name = Efichero.getText().toString();
         try {
@@ -96,10 +99,30 @@ public class MainActivity extends AppCompatActivity {
             ioe.printStackTrace();
         }
     }
+    public void onClickCargar(View view) {
+
+        cargar();
+    }
 
     public void clickPreferencias(View v) {
 
         Intent intentAbrir = new Intent(this, setPrefer.class);
-        startActivity(intentAbrir);
+        startActivityForResult(intentAbrir, 0);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        loadPref();
+    }
+
+    private void loadPref(){
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+
+        String my_edittext_preference = mySharedPreferences.getString("Epreferencias","");
+        Efichero.setText(my_edittext_preference);
+
+        cargar();
+
     }
 }
