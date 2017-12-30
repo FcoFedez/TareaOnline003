@@ -98,18 +98,20 @@
         >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/BsalvarSD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="guardarSD"
+            android:text="SALVAR SD" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/BcargarSD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="clickCargaSD"
+            android:text="CARGAR SD" />
     </LinearLayout>
 
 </LinearLayout>
