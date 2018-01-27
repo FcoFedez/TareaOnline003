@@ -245,6 +245,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Metodo que comprueva se esta disponible o no la tarjeta SD
+     */
     private void comprobarSD() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
