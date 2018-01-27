@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Archivo por defecto">
+
+        <EditTextPreference
+            android:id="@+id/Epreferencias"
+            android:dialogTitle="dialog_title_edittext_preference"
+            android:key="Eprefer"
+            android:summary="nombre del archivo por defecto"
+            android:title="Cargar archivo:" />
+
+    </PreferenceCategory>>
+</PreferenceScreen>
